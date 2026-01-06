@@ -1,0 +1,227 @@
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Éco-Challenge Jeu de société</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+
+
+    <header>
+        <h1>🌍 Éco-Challenge ♻️ — Choisis ta version !</h1>
+    </header>
+
+    <main>
+        <section class="version">
+            <h3>🟢 1. Édition Complète – Pack Premium</h3>
+            <p class="price">💰 Prix : 29,99 €</p>
+            <ul>
+                <li>🧩 Plateau de jeu cartonné grand format (980 × 550 mm)</li>
+                <li>🃏 Cartes officielles du jeu : Événements, Défis, Bonus, Malus, Entreprises…</li>
+                <li>💰 Jetons : 💰, ⭐, 🌱</li>
+                <li>🎲 1 dé + pions inclus</li>
+                <li>📱 QR code pour les règles</li>
+                <li>📦 Boîte Éco‑Challenge</li>
+                <li>🧠 Quiz inclus</li>
+                <li>🎁 2 cadeaux mystère</li>
+            </ul>
+            <div class="tagline">✅ Idéal pour jouer directement entre amis ou en famille !</div>
+            <a href="#commande"
+               class="button"
+               onclick="showOrderForm(this)"
+               data-version="Édition Complète">
+                🛒 Commander cette version
+            </a>
+        </section>
+
+        <section class="version">
+            <h3>🌿 2. Édition Essentielle – Plateau & Cartes</h3>
+            <p class="price">💰 Prix : 14,99 €</p>
+            <ul>
+                <li>🧩 Plateau (980 × 550 mm)</li>
+                <li>🃏 Cartes officielles</li>
+                <li>📱 QR code</li>
+                <li>📦 Boîte compacte</li>
+                <li>🧠 Quiz inclus</li>
+                <li>❌ Sans dés ni pions</li>
+            </ul>
+            <div class="tagline">♻️ Parfait si tu as déjà du matériel !</div>
+            <a href="#commande"
+               class="button"
+               onclick="showOrderForm(this)"
+               data-version="Édition Complète">
+                🛒 Commander cette version
+            </a>
+        </section>
+
+        <section class="version">
+            <h3>🖨️ 3. Édition Imprimable – À faire soi-même</h3>
+            <p class="price">💰 Prix : 9,99 €</p>
+            <ul>
+                <li>📄 Plateau à imprimer (A4 – 4 feuilles)</li>
+                <li>✂️ Cartes imprimables</li>
+                <li>📘 Règlement PDF</li>
+                <li>🧠 Quiz inclus</li>
+            </ul>
+            <div class="tagline">✅ Idéal pour les écoles ou usage économique.</div>
+            <a href="#commande"
+               class="button"
+               onclick="showOrderForm(this)"
+               data-version="Édition Complète">
+                🛒 Commander cette version
+            </a>
+
+        </section>
+
+        <section id="contact" class="version">
+            <h3>🎓 Commande Éducative – Écoles, Associations & Animateurs</h3>
+            <ul>
+                <li>🧩 Tout le contenu du jeu</li>
+                <li>📘 Règlement PDF + QR</li>
+                <li>🎥 2 vidéos explicatives</li>
+                <li>🧠 Quiz élèves</li>
+                <li>📦 Tarifs dégressifs dès 5, 10 ou 30 exemplaires</li>
+                <li>🎁 <strong>Cadeau exclusif pour enfants</strong></li>
+                <li>📚 Licence éducative incluse</li>
+            </ul>
+            <p class="highlight">
+                ✉️ Contactez-nous pour un devis ou une fiche PDF.<br>
+                📞 Disponible 7j/7 – Réponse sous 24h.
+            </p>
+            <a href="mailto:eco.challenge06400@gmail.com" class="button">📨 Demander un devis</a>
+        </section>
+
+        <div class="contact-block">
+            <p><span class="icon">📧</span> <strong>Mail :</strong> <a href="mailto:eco.challenge06400@gmail.com">eco.challenge06400@gmail.com</a></p>
+            <p><span class="icon">📞</span> <strong>Téléphone :</strong> <a href="tel:+33612345678">06 12 34 56 78</a> <span class="note">(appel / WhatsApp)</span></p>
+        </div>
+
+    </main>
+
+    <div class="rappel-reglement">
+        📘 Tu veux consulter les règles avant d’acheter ?
+        <a href="" class="button small">📖 Voir le règlement</a>
+    </div>
+
+    <a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
+
+    <section class="order-section">
+        <div class="order-form">
+            <h2>📦 Passe ta commande</h2>
+            <form>
+                <label>Nom <input type="text" placeholder="Ton nom" required></label>
+                <label>Prénom <input type="text" placeholder="Ton prénom" required></label>
+                <label>Email <input type="email" placeholder="exemple@mail.com" required></label>
+                <label>Adresse <input type="text" placeholder="Ton adresse complète" required></label>
+                <label>Édition choisie
+                    <select required>
+                        <option>Édition Complète</option>
+                        <option>Édition Classique</option>
+                        <option>Édition Imprimable</option>
+                    </select>
+                </label>
+                <label>Moyen de paiement
+                    <select required>
+                        <option>Carte Bancaire</option>
+                        <option>PayPal</option>
+                        <option>Crypto</option>
+                    </select>
+                </label>
+
+                <button class="btn-black">Procéder au paiement</button>
+                <button class="btn-paypal">Payer avec <strong>PayPal</strong></button>
+            </form>
+        </div>
+
+        <div class="order-summary">
+            <h3>🧾 Récapitulatif</h3>
+            <ul>
+                <li><span>Sous-total</span><strong>35,00€</strong></li>
+                <li><span>Livraison</span><strong>Offerte</strong></li>
+                <li class="total"><span>Total</span><strong>35,00€</strong></li>
+            </ul>
+            <p class="note">📦 Livraison en 2-4 jours. Retrait possible.</p>
+        </div>
+    </section>
+
+    <section class="infos-bar">
+        <div class="info-card">
+            <span class="info-icon">🔒</span>
+            <div>
+                <strong>Paiement sécurisé</strong>
+                <p>Carte, PayPal, Crypto</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <span class="info-icon">🚚</span>
+            <div>
+                <strong>Livraison offerte</strong>
+                <p>Dès 28€ d’achat</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <span class="info-icon">🔁</span>
+            <div>
+                <strong>Retours gratuits</strong>
+                <p>Sous 30 jours</p>
+            </div>
+        </div>
+    </section>
+    <!-- 🔘 BOUTON AVIS -->
+    <div class="avis-toggle">
+        <button id="toggleAvis" class="avis-open-btn">
+            ⭐ Laisser un avis
+        </button>
+    </div>
+
+    <!-- ⭐ SECTION AVIS (CACHÉE AU DÉPART) -->
+    <section id="avis" class="avis-box avis-hidden">
+
+        <h3>⭐ Laisser un avis</h3>
+        <p class="avis-sub">Ton avis est envoyé directement à l’équipe Éco-Challenge 🌱</p>
+
+        <form id="avisForm" class="avis-form">
+            <div class="avis-field">
+                <label>Ton prénom</label>
+                <input type="text" name="prenom" placeholder="Ex : Alex" required>
+            </div>
+
+            <div class="avis-field">
+                <label>Ta note</label>
+                <select name="note" required>
+                    <option value="5">⭐⭐⭐⭐⭐ – Excellent</option>
+                    <option value="4">⭐⭐⭐⭐ – Très bien</option>
+                    <option value="3">⭐⭐⭐ – Bien</option>
+                    <option value="2">⭐⭐ – Moyen</option>
+                    <option value="1">⭐ – À améliorer</option>
+                </select>
+            </div>
+
+            <div class="avis-field avis-full">
+                <label>Ton avis</label>
+                <textarea name="message" placeholder="Dis-nous ce que tu as pensé du jeu…" required></textarea>
+            </div>
+
+            <button type="submit" class="avis-btn">📩 Envoyer mon avis</button>
+            <p id="avisSuccess" class="avis-success">✅ Merci pour ton avis !</p>
+        </form>
+
+        <div class="avis-list">
+            <h4>Avis récents</h4>
+            <p class="avis-empty">Aucun avis pour le moment. Soyez le premier 🌱</p>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Eco-Challenge. Tous droits réservés.
+    </footer>
+
+
+    <script src="script.js" defer></script>
+
+    </body>
+    </html>

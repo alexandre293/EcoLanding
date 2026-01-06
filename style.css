@@ -1,0 +1,901 @@
+:root {
+    --eco-green: #4CAF50;
+    --eco-leaf: #81C784;
+    --eco-bark: #3E2723;
+    --eco-cream: #F9FBE7;
+    --eco-sky: #E0F7FA;
+    --eco-glow: rgba(76, 175, 80, 0.25);
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, var(--eco-cream), var(--eco-sky));
+    color: var(--eco-bark);
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4);
+    background-image: url("Case photo/principal.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+main {
+    max-width: 980px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--eco-green);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.intro-desc {
+    background: #ffffffd0;
+    border-left: 6px solid var(--eco-green);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px var(--eco-glow);
+}
+
+.intro-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.intro-list li::before {
+    content: '🌿 ';
+}
+
+.highlight {
+    text-align: center;
+    background: #fff;
+    padding: 18px;
+    font-size: 1rem;
+    border: 2px dashed var(--eco-leaf);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    color: #2E7D32;
+}
+
+.version {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: 2px solid var(--eco-leaf);
+    box-shadow: 0 12px 24px var(--eco-glow);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.version:hover {
+    transform: translateY(-4px);
+}
+
+.version h3 {
+    font-size: 1.6rem;
+    color: var(--eco-green);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   COMMANDE – OUVERTURE AU CLIC
+================================ */
+
+.order-hidden{
+    display: none;
+}
+
+.order-visible{
+    display: flex;
+    animation: orderOpen .45s ease;
+}
+
+@keyframes orderOpen{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.price {
+    font-size: 1.25rem;
+    color: #2E7D32;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.version ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.version li::before {
+    content: '🍃';
+    margin-right: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.tagline {
+    background: #f1f8e9;
+    border-left: 6px solid #aed581;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-style: italic;
+    color: #33691e;
+    margin-top: 20px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: var(--eco-green);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background: #2e7d32;
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+footer {
+    background: #e0f2f1;
+    text-align: center;
+    padding: 30px 10px;
+    font-size: 0.95rem;
+    color: #444;
+    border-top: 3px double #a7ffeb;
+    margin-top: 80px;
+    font-style: italic;
+    animation: appear 1.8s ease;
+}
+
+canvas#fallingCanvas {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.inclus-box {
+    background: #f0f8f2;
+    border-left: 6px solid #34a853;
+    padding: 1em;
+    margin: 1.5em 0;
+    font-size: 1.05em;
+    line-height: 1.6em;
+    border-radius: 8px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #34a853;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-to-top:hover {
+    background-color: #2c8f46;
+    transform: translateY(-3px);
+}
+
+.rappel-reglement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #eafaf1;
+    padding: 1.5em 2em;
+    border-radius: 16px;
+    margin: 3em auto;
+    width: fit-content;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.rappel-reglement .question {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: #222;
+}
+
+.rappel-reglement .button.small {
+    font-size: 1em;
+    padding: 0.7em 1.4em;
+    border-radius: 999px;
+    background-color: #34a853;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.rappel-reglement .button.small:hover {
+    background-color: #2c8f46;
+}
+
+.contact-block {
+    background: #f4fef4;
+    border: 1px solid #b6e7c8;
+    border-radius: 12px;
+    padding: 20px 30px;
+    margin: 40px auto;
+    width: fit-content;
+    max-width: 90%;
+    font-size: 18px;
+    line-height: 1.6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.contact-block p {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.contact-block .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact-block a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-block a:hover {
+    text-decoration: underline;
+}
+
+.contact-block .note {
+    font-style: italic;
+    font-size: 15px;
+    color: #666;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #2e7d32;
+    font-size: 1.5rem;
+}
+
+.button.dark {
+    background-color: #111;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+.button.dark:hover {
+    background-color: #000;
+}
+
+.button.paypal {
+    background-color: #0070ba;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+.button.paypal:hover {
+    background-color: #005ea6;
+}
+
+.button.crypto {
+    background-color: #388e3c;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+}
+.button.crypto:hover {
+    background-color: #2e7d32;
+}
+.button.dark {
+    background-color: #111;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+.button.dark:hover {
+    background-color: #000;
+}
+
+.button.paypal {
+    background-color: #0070ba;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+.button.paypal:hover {
+    background-color: #005ea6;
+}
+
+.button.crypto {
+    background-color: #388e3c;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 14px;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 100%;
+}
+.button.crypto:hover {
+    background-color: #2e7d32;
+}
+
+.commande-section {
+    max-width: 760px;
+    margin: 40px auto;
+    background: #f3fdf6;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.commande-section h2 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.commande-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.form-group input,
+.form-group select {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.recap {
+    margin-top: 40px;
+    background: #ffffffcc;
+    border: 1px solid #c8e6c9;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.recap h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #33691e;
+    margin-bottom: 15px;
+}
+
+.recap ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 10px 0;
+}
+
+.recap li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.recap p {
+    margin: 10px 0 20px;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.infos-plus li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.order-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    background: #f4fef4;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.order-form {
+    flex: 1 1 380px;
+    max-width: 500px;
+}
+
+.order-form h2 {
+    font-size: 1.8rem;
+    color: var(--eco-green);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.order-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.order-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: var(--eco-bark);
+    font-size: 0.95rem;
+}
+
+.order-form input,
+.order-form select {
+    margin-top: 6px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.btn-black,
+.btn-paypal {
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-black {
+    background-color: #111;
+    color: white;
+}
+
+.btn-black:hover {
+    background-color: #000;
+}
+
+.btn-paypal {
+    background-color: #0070ba;
+    color: white;
+}
+
+.btn-paypal:hover {
+    background-color: #005ea6;
+}
+
+/* Récapitulatif */
+.order-summary {
+    flex: 1 1 300px;
+    max-width: 380px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+}
+
+.order-summary h3 {
+    font-size: 1.4rem;
+    color: var(--eco-green);
+    margin-bottom: 20px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-summary li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.order-summary .total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.order-summary .note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+.ligne-eco .item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ligne-eco .item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   AVIS – DESIGN PRO & ÉLÉGANT
+================================ */
+
+.avis-box {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 45px;
+    background: #ffffff;
+    border: 2px solid #6cc070;
+    border-radius: 26px;
+    box-shadow: 0 18px 40px rgba(76, 175, 80, 0.2);
+}
+
+.avis-box h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 6px;
+}
+
+.avis-sub {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* FORM */
+.avis-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: end;
+}
+
+.avis-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.avis-field label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 6px;
+}
+
+.avis-field input,
+.avis-field select,
+.avis-field textarea {
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1.5px solid #cfe9d6;
+    font-size: 0.95rem;
+    background: #f9fdf9;
+    font-family: inherit;
+}
+
+.avis-field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.avis-field input:focus,
+.avis-field select:focus,
+.avis-field textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+    box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+}
+
+/* Champ large */
+.avis-full {
+    grid-column: 1 / -1;
+}
+
+/* Bouton */
+.avis-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 10px;
+
+    padding: 16px 40px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+
+    box-shadow: 0 12px 28px rgba(76,175,80,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avis-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(76,175,80,0.6);
+}
+
+/* Message succès */
+.avis-success {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #2e7d32;
+    font-weight: 600;
+    display: none;
+    margin-top: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .avis-form {
+        grid-template-columns: 1fr;
+    }
+
+    .avis-box {
+        padding: 30px 22px;
+    }
+}
+
+/* ===============================
+   BARRE INFOS E-COMMERCE
+================================ */
+
+.infos-bar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 16px;
+    background: linear-gradient(135deg, #f3f8f2, #e9f3e7);
+    border-bottom: 1px solid #dfe8dc;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #ffffff;
+    padding: 14px 20px;
+    border-radius: 14px;
+    min-width: 240px;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.info-icon {
+    font-size: 26px;
+}
+
+.info-card strong {
+    display: block;
+    font-size: 15px;
+    color: #1f3d1f;
+}
+
+.info-card p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #5f6f5f;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .info-card {
+        min-width: 100%;
+    }
+}
+
+/* Avis récents (dans #avis) */
+#avis .avis-list{
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid #d8eadf;
+}
+
+#avis .avis-list h4{
+    margin: 0 0 14px 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #2e7d32;
+}
+
+#avis .avis-empty{
+    margin: 0;
+    padding: 12px 14px;
+    background: #f5fbf6;
+    border: 1px dashed #bfe7c8;
+    border-radius: 14px;
+    color: #516357;
+    font-style: italic;
+    font-size: 0.98rem;
+    line-height: 1.4;
+}
+
+/* Bouton ouvrir avis */
+.avis-toggle{
+    text-align: center;
+    margin: 60px 0 20px;
+}
+
+.avis-open-btn{
+    padding: 16px 42px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    box-shadow: 0 12px 28px rgba(76,175,80,.45);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.avis-open-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(76,175,80,.6);
+}
+
+/* Avis cachés */
+.avis-hidden{
+    display: none;
+}
+
+/* Animation ouverture */
+.avis-visible{
+    display: block;
+    animation: avisOpen .4s ease;
+}
+
+@keyframes avisOpen{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
