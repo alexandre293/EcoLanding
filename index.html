@@ -93,16 +93,42 @@
             <a href="mailto:eco.challenge06400@gmail.com" class="button">📨 Demander un devis</a>
         </section>
 
-        <div class="contact-block">
-            <p><span class="icon">📧</span> <strong>Mail :</strong> <a href="mailto:eco.challenge06400@gmail.com">eco.challenge06400@gmail.com</a></p>
-            <p><span class="icon">📞</span> <strong>Téléphone :</strong> <a href="tel:+33612345678">06 12 34 56 78</a> <span class="note">(appel / WhatsApp)</span></p>
+        <button id="contactBtn">💬 Contact</button>
+        <div id="contactPanel">
+            <button id="contactClose">✖</button>
+            <p class="contact-intro">
+                <strong>Bonjour, ici Eco-Challenge 🌱</strong><br>
+                Vous pouvez nous écrire pour toute question ou demande d’assistance.
+                Notre équipe vous répondra dans les plus brefs délais.
+            </p>
+            <div class="form-wrapper">
+                <!-- Champ de texte -->
+                <textarea id="userQuestion" placeholder="Tapez votre question ici..."></textarea>
+                <!-- Bouton Envoyer -->
+                <button class="send-btn" onclick="sendEmail()">Envoyer</button>
+            </div>
+            <p class="contact-intro">
+                Service client disponible <strong>24h/24 et 7j/7</strong>.
+            </p>
+            <div class="contact-block">
+                <p>
+                    <span class="icon">📧</span>
+                    <strong>Mail :</strong>
+                    <a href="mailto:eco.challenge06400@gmail.com">eco.challenge06400@gmail.com</a>
+                </p>
+                <p>
+                    <span class="icon">📞</span>
+                    <strong>Téléphone :</strong>
+                    <a href="tel:+33612345678">06 12 34 56 78</a>
+                    <span class="note">(appel / WhatsApp)</span>
+                </p>
+            </div>
         </div>
-
     </main>
 
     <div class="rappel-reglement">
         📘 Tu veux consulter les règles avant d’acheter ?
-        <a href="" class="button small">📖 Voir le règlement</a>
+        <a href="https://alexandre293.github.io/Eco-jeux/" class="button small">📖 Voir le règlement</a>
     </div>
 
     <a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
@@ -210,11 +236,13 @@
             <p id="avisSuccess" class="avis-success">✅ Merci pour ton avis !</p>
         </form>
 
-        <div class="avis-list">
-            <h4>Avis récents</h4>
-            <p class="avis-empty">Aucun avis pour le moment. Soyez le premier 🌱</p>
-        </div>
     </section>
+
+
+    <div class="avis-list">
+        <h4>Avis récents</h4>
+        <p class="avis-empty">Aucun avis pour le moment. Soyez le premier 🌱</p>
+    </div>
 
     <footer>
         © 2026 Eco-Challenge. Tous droits réservés.
