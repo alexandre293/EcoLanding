@@ -93,9 +93,10 @@
             <a href="mailto:eco.challenge06400@gmail.com" class="button">📨 Demander un devis</a>
         </section>
 
-        <button id="contactBtn">💬 Contact</button>
-        <div id="contactPanel">
-            <button id="contactClose">✖</button>
+        <button id="contactBtn" aria-controls="contactPanel" aria-expanded="false" aria-haspopup="dialog">💬 Contact</button>
+        <div id="contactOverlay" class="contact-overlay" aria-hidden="true"></div>
+        <div id="contactPanel" class="contact-panel" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+            <button id="contactClose" aria-label="Fermer le panneau de contact">✖</button>
             <p class="contact-intro">
                 <strong>Bonjour, ici Eco-Challenge 🌱</strong><br>
                 Vous pouvez nous écrire pour toute question ou demande d’assistance.
@@ -199,13 +200,16 @@
     </section>
     <!-- 🔘 BOUTON AVIS -->
     <div class="avis-toggle">
-        <button id="toggleAvis" class="avis-open-btn">
+        <button id="toggleAvis" class="avis-open-btn" aria-controls="avis" aria-expanded="false" aria-haspopup="dialog">
             ⭐ Laisser un avis
         </button>
     </div>
 
-    <!-- ⭐ SECTION AVIS (CACHÉE AU DÉPART) -->
-    <section id="avis" class="avis-box avis-hidden">
+    <div id="avisOverlay" class="avis-overlay" aria-hidden="true"></div>
+
+    <!-- ⭐ MODAL AVIS (désolidarisée du flux pour éviter les déplacements) -->
+    <section id="avis" class="avis-box avis-modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <button id="avisClose" class="avis-close" aria-label="Fermer la boîte d'avis">✖</button>
 
         <h3>⭐ Laisser un avis</h3>
         <p class="avis-sub">Ton avis est envoyé directement à l’équipe Éco-Challenge 🌱</p>

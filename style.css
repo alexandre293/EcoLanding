@@ -341,6 +341,83 @@ html {
     display: none;
 }
 
+/* ===============================
+   CONTACT PANEL & OVERLAY
+   Accessible and toggleable
+================================ */
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s;
+  z-index: 990;
+}
+.contact-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 320px;
+  max-width: calc(100% - 40px);
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s;
+  z-index: 995;
+}
+.contact-panel.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+#contactClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #666;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+#contactClose:focus, #contactClose:hover {
+  background: #f0f0f0;
+  outline: none;
+}
+
+#contactPanel textarea#userQuestion {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.send-btn {
+  margin-top: 10px;
+  background: var(--eco-green);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+
 .modal-content input,
 .modal-content textarea,
 .modal-content select {
@@ -899,7 +976,68 @@ html {
     }
 }
 
-/* Bloc avis */
+/* Modal & overlay for Avis: keeps it out of flow to avoid layout shifts */
+.avis-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1004;
+}
+.avis-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.avis-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.98);
+    width: min(820px, 95%);
+    max-height: 80vh;
+    overflow: auto;
+    padding: 28px 36px;
+    background: linear-gradient(135deg, #ffffff, #f7fff7);
+    border-radius: 18px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    z-index: 1005;
+}
+.avis-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.avis-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+    padding: 6px;
+    border-radius: 8px;
+}
+.avis-close:hover,
+.avis-close:focus {
+    background: #f0f0f0;
+    outline: none;
+}
+
+/* prevent body scroll when modal open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Keep the review list stable and centred */
 .avis-list {
     max-width: 720px;
     margin: 40px auto;
