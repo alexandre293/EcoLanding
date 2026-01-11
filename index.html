@@ -50,7 +50,10 @@
             <div class="tagline">♻️ Parfait si tu as déjà du matériel !</div>
             <a href="#commande"
                class="button"
-               onclick="showOrderForm(this)"
+               onclick="function showOrderForm(param) {
+
+               }
+               showOrderForm(this)"
                data-version="Édition Complète">
                 🛒 Commander cette version
             </a>
@@ -93,7 +96,7 @@
             <a href="mailto:eco.challenge06400@gmail.com" class="button">📨 Demander un devis</a>
         </section>
 
-        <button id="contactBtn">💬 Contact</button>
+        <button id="contactBtn" type="button">💬 Contact</button>
         <div id="contactPanel">
             <button id="contactClose">✖</button>
             <p class="contact-intro">
@@ -103,9 +106,12 @@
             </p>
             <div class="form-wrapper">
                 <!-- Champ de texte -->
-                <textarea id="userQuestion" placeholder="Tapez votre question ici..."></textarea>
+                <label for="userQuestion"></label><textarea id="userQuestion" placeholder="Tapez votre question ici..."></textarea>
                 <!-- Bouton Envoyer -->
-                <button class="send-btn" onclick="sendEmail()">Envoyer</button>
+                <button class="send-btn" onclick="function sendEmail() {
+
+                }
+                sendEmail()">Envoyer</button>
             </div>
             <p class="contact-intro">
                 Service client disponible <strong>24h/24 et 7j/7</strong>.
@@ -126,7 +132,7 @@
         </div>
     </main>
 
-    <div class="rappel-reglement">
+    <div class="rappel-règlement">
         📘 Tu veux consulter les règles avant d’acheter ?
         <a href="https://alexandre293.github.io/Eco-jeux/" class="button small">📖 Voir le règlement</a>
     </div>
@@ -197,45 +203,45 @@
             </div>
         </div>
     </section>
-    <!-- 🔘 BOUTON AVIS -->
+
+
     <div class="avis-toggle">
-        <button id="toggleAvis" class="avis-open-btn">
+        <button id="toggleAvis" class="avis-open-btn" aria-controls="avis" aria-expanded="false" aria-haspopup="dialog">
             ⭐ Laisser un avis
         </button>
     </div>
-
-    <!-- ⭐ SECTION AVIS (CACHÉE AU DÉPART) -->
-    <section id="avis" class="avis-box avis-hidden">
-
+    <div id="avisOverlay" class="avis-overlay" aria-hidden="true"></div>
+    <!-- ⭐ MODAL AVIS (désolidarisée du flux pour éviter les déplacements) -->
+    <section id="avis" class="avis-box avis-modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <button id="avisClose" class="avis-close" aria-label="Fermer la boîte d'avis">✖</button>
         <h3>⭐ Laisser un avis</h3>
-        <p class="avis-sub">Ton avis est envoyé directement à l’équipe Éco-Challenge 🌱</p>
-
+        <p class="">Ton avis est envoyé directement à l’équipe Éco-Challenge 🌱</p>
         <form id="avisForm" class="avis-form">
             <div class="avis-field">
                 <label>Ton prénom</label>
-                <input type="text" name="prenom" placeholder="Ex : Alex" required>
+                <label>
+                    <input type="text" name="prenom" placeholder="Ex : Alex" required>
+                </label>
             </div>
-
             <div class="avis-field">
                 <label>Ta note</label>
-                <select name="note" required>
-                    <option value="5">⭐⭐⭐⭐⭐ – Excellent</option>
-                    <option value="4">⭐⭐⭐⭐ – Très bien</option>
-                    <option value="3">⭐⭐⭐ – Bien</option>
-                    <option value="2">⭐⭐ – Moyen</option>
-                    <option value="1">⭐ – À améliorer</option>
-                </select>
+                <label>
+                    <select name="note" required>
+                        <option value="5">⭐⭐⭐⭐⭐ – Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ – Très bien</option>
+                        <option value="3">⭐⭐⭐ – Bien</option>
+                        <option value="2">⭐⭐ – Moyen</option>
+                        <option value="1">⭐ – À améliorer</option>
+                    </select>
+                </label>
             </div>
-
             <div class="avis-field avis-full">
                 <label>Ton avis</label>
                 <textarea name="message" placeholder="Dis-nous ce que tu as pensé du jeu…" required></textarea>
             </div>
-
             <button type="submit" class="avis-btn">📩 Envoyer mon avis</button>
             <p id="avisSuccess" class="avis-success">✅ Merci pour ton avis !</p>
         </form>
-
     </section>
 
 
