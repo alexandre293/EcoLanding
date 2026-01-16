@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ======================
-    AVIS
- ====================== */
+       AVIS
+    ====================== */
 
     const toggleAvisBtn = document.getElementById("toggleAvis");
     const avisModal = document.getElementById("avis");
@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1500);
         });
     }
-
 
     /* ======================
        CONTACT
