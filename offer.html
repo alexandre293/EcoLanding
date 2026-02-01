@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Éco-Challenge Jeu de société</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+
+<header>
+    <h1>🌍 Éco-Challenge ♻️ — Choisis ta version !</h1>
+</header>
+
+<main>
+
+    <button id="contactBtn" type="button">💬 Contact</button>
+    <div id="contactPanel">
+        <button id="contactClose">✖</button>
+        <p class="contact-intro">
+            <strong>Bonjour, ici Eco-Challenge 🌱</strong><br>
+            Vous pouvez nous écrire pour toute question ou demande d’assistance.
+            Notre équipe vous répondra dans les plus brefs délais.
+        </p>
+        <p class="contact-intro">
+            Service client disponible <strong>24h/24 et 7j/7</strong>.
+        </p>
+        <div class="contact-block">
+            <p>
+                <span class="icon">📧</span>
+                <strong>Mail :</strong>
+                <a href="mailto:eco.challenge06400@gmail.com">eco.challenge06400@gmail.com</a>
+            </p>
+            <p>
+                <span class="icon">📞</span>
+                <strong>Téléphone :</strong>
+                <a href="tel:+33612345678">06 12 34 56 78</a>
+                <span class="note">(appel / WhatsApp)</span>
+            </p>
+        </div>
+    </div>
+</main>
+
+<div class="rappel-règlement">
+    📘 Tu veux consulter les règles avant d’acheter ?
+    <a href="https://alexandre293.github.io/Eco-jeux/" class="button small">📖 Voir le règlement</a>
+</div>
+
+<a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
+
+<section class="order-section">
+    <div class="order-form">
+        <h2>📦 Passe ta commande</h2>
+        <form>
+            <label>Nom <input type="text" placeholder="Ton nom" required></label>
+            <label>Prénom <input type="text" placeholder="Ton prénom" required></label>
+            <label>Email <input type="email" placeholder="exemple@mail.com" required></label>
+            <label>Adresse <input type="text" placeholder="Ton adresse complète" required></label>
+            <label>Édition choisie
+                <select required>
+                    <option>Édition Complète</option>
+                    <option>Édition Classique</option>
+                    <option>Édition Imprimable</option>
+                </select>
+            </label>
+            <label>Moyen de paiement
+                <select required>
+                    <option>Carte Bancaire</option>
+                    <option>PayPal</option>
+                    <option>Crypto</option>
+                </select>
+            </label>
+
+            <button class="btn-black">Procéder au paiement</button>
+            <button class="btn-paypal">Payer avec <strong>PayPal</strong></button>
+        </form>
+    </div>
+
+    <div class="order-summary">
+        <h3>🧾 Récapitulatif</h3>
+        <ul>
+            <li><span>Sous-total</span><strong>35,00€</strong></li>
+            <li><span>Livraison</span><strong>Offerte</strong></li>
+            <li class="total"><span>Total</span><strong>35,00€</strong></li>
+        </ul>
+        <p class="note">📦 Livraison en 2-4 jours. Retrait possible.</p>
+    </div>
+</section>
+
+<section class="infos-bar">
+    <div class="info-card">
+        <span class="info-icon">🔒</span>
+        <div>
+            <strong>Paiement sécurisé</strong>
+            <p>Carte, PayPal, Crypto</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <span class="info-icon">🚚</span>
+        <div>
+            <strong>Livraison offerte</strong>
+            <p>Dès 28€ d’achat</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <span class="info-icon">🔁</span>
+        <div>
+            <strong>Retours gratuits</strong>
+            <p>Sous 30 jours</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 - 2026 Eco-Challenge. Tous droits réservés.
+</footer>
+
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -28,7 +28,7 @@
                 <li>🎁 2 cadeaux mystère</li>
             </ul>
             <div class="tagline">✅ Idéal pour jouer directement entre amis ou en famille !</div>
-            <a href="#commande"
+            <a href="offer.html"
                class="button"
                onclick="showOrderForm(this)"
                data-version="Édition Complète">
@@ -48,7 +48,7 @@
                 <li>❌ Sans dés ni pions</li>
             </ul>
             <div class="tagline">♻️ Parfait si tu as déjà du matériel !</div>
-            <a href="#commande"
+            <a href="offer.html"
                class="button"
                onclick="function showOrderForm(param) {
 
@@ -69,7 +69,7 @@
                 <li>🧠 Quiz inclus</li>
             </ul>
             <div class="tagline">✅ Idéal pour les écoles ou usage économique.</div>
-            <a href="#commande"
+            <a href="offer.html"
                class="button"
                onclick="showOrderForm(this)"
                data-version="Édition Complète">
@@ -104,15 +104,6 @@
                 Vous pouvez nous écrire pour toute question ou demande d’assistance.
                 Notre équipe vous répondra dans les plus brefs délais.
             </p>
-            <div class="form-wrapper">
-                <!-- Champ de texte -->
-                <label for="userQuestion"></label><textarea id="userQuestion" placeholder="Tapez votre question ici..."></textarea>
-                <!-- Bouton Envoyer -->
-                <button class="send-btn" onclick="function sendEmail() {
-
-                }
-                sendEmail()">Envoyer</button>
-            </div>
             <p class="contact-intro">
                 Service client disponible <strong>24h/24 et 7j/7</strong>.
             </p>
@@ -138,45 +129,6 @@
     </div>
 
     <a href="#" class="back-to-top" title="Remonter en haut">⬆️</a>
-
-    <section class="order-section">
-        <div class="order-form">
-            <h2>📦 Passe ta commande</h2>
-            <form>
-                <label>Nom <input type="text" placeholder="Ton nom" required></label>
-                <label>Prénom <input type="text" placeholder="Ton prénom" required></label>
-                <label>Email <input type="email" placeholder="exemple@mail.com" required></label>
-                <label>Adresse <input type="text" placeholder="Ton adresse complète" required></label>
-                <label>Édition choisie
-                    <select required>
-                        <option>Édition Complète</option>
-                        <option>Édition Classique</option>
-                        <option>Édition Imprimable</option>
-                    </select>
-                </label>
-                <label>Moyen de paiement
-                    <select required>
-                        <option>Carte Bancaire</option>
-                        <option>PayPal</option>
-                        <option>Crypto</option>
-                    </select>
-                </label>
-
-                <button class="btn-black">Procéder au paiement</button>
-                <button class="btn-paypal">Payer avec <strong>PayPal</strong></button>
-            </form>
-        </div>
-
-        <div class="order-summary">
-            <h3>🧾 Récapitulatif</h3>
-            <ul>
-                <li><span>Sous-total</span><strong>35,00€</strong></li>
-                <li><span>Livraison</span><strong>Offerte</strong></li>
-                <li class="total"><span>Total</span><strong>35,00€</strong></li>
-            </ul>
-            <p class="note">📦 Livraison en 2-4 jours. Retrait possible.</p>
-        </div>
-    </section>
 
     <section class="infos-bar">
         <div class="info-card">
@@ -204,54 +156,8 @@
         </div>
     </section>
 
-
-    <div class="avis-toggle">
-        <button id="toggleAvis" class="avis-open-btn" aria-controls="avis" aria-expanded="false" aria-haspopup="dialog">
-            Laisser un avis
-        </button>
-    </div>
-    <div id="avisOverlay" class="avis-overlay" aria-hidden="true"></div>
-    <!-- ⭐ MODAL AVIS (désolidarisée du flux pour éviter les déplacements) -->
-    <section id="avis" class="avis-box avis-modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
-        <button id="avisClose" class="avis-close" aria-label="Fermer la boîte d'avis">✖</button>
-        <h3>⭐ Laisser un avis</h3>
-        <p class="">Ton avis est envoyé directement à l’équipe Éco-Challenge 🌱</p>
-        <form id="avisForm" class="avis-form">
-            <div class="avis-field">
-                <label>Ton prénom</label>
-                <label>
-                    <input type="text" name="prenom" placeholder="Ex : Alex" required>
-                </label>
-            </div>
-            <div class="avis-field">
-                <label>Ta note</label>
-                <label>
-                    <select name="note" required>
-                        <option value="5">⭐⭐⭐⭐⭐ – Excellent</option>
-                        <option value="4">⭐⭐⭐⭐ – Très bien</option>
-                        <option value="3">⭐⭐⭐ – Bien</option>
-                        <option value="2">⭐⭐ – Moyen</option>
-                        <option value="1">⭐ – À améliorer</option>
-                    </select>
-                </label>
-            </div>
-            <div class="avis-field avis-full">
-                <label>Ton avis</label>
-                <textarea name="message" placeholder="Dis-nous ce que tu as pensé du jeu…" required></textarea>
-            </div>
-            <button type="submit" class="avis-btn">📩 Envoyer mon avis</button>
-            <p id="avisSuccess" class="avis-success">✅ Merci pour ton avis !</p>
-        </form>
-    </section>
-
-
-    <div class="avis-list">
-        <h4>Avis récents</h4>
-        <p class="avis-empty">Aucun avis pour le moment. Soyez le premier 🌱</p>
-    </div>
-
     <footer>
-        © 2026 Eco-Challenge. Tous droits réservés.
+        © 2025 - 2026 Eco-Challenge. Tous droits réservés.
     </footer>
 
 
