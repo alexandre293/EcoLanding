@@ -6,15 +6,14 @@
     <title>Éco-Challenge Jeu de société</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-
-<header>
-    <h1>🌍 Éco-Challenge ♻️ — Choisis ta version !</h1>
+<header class="hero">
+    <img src="img/Eco-challenge-verison-prix.png" alt="Éco-Challenge" class="hero-img">
 </header>
 
 <main>
-
     <button id="contactBtn" type="button">💬 Contact</button>
     <div id="contactPanel">
         <button id="contactClose">✖</button>
@@ -52,37 +51,39 @@
 <section class="order-section">
     <div class="order-form">
         <h2>📦 Passe ta commande</h2>
-        <form>
+        <form id="commandeForm">
             <label>Nom <input type="text" placeholder="Ton nom" required></label>
             <label>Prénom <input type="text" placeholder="Ton prénom" required></label>
             <label>Email <input type="email" placeholder="exemple@mail.com" required></label>
             <label>Adresse <input type="text" placeholder="Ton adresse complète" required></label>
+
             <label>Édition choisie
-                <select required>
-                    <option>Édition Complète</option>
-                    <option>Édition Classique</option>
-                    <option>Édition Imprimable</option>
-                </select>
-            </label>
-            <label>Moyen de paiement
-                <select required>
-                    <option>Carte Bancaire</option>
-                    <option>PayPal</option>
-                    <option>Crypto</option>
+                <select id="editionSelect" required>
+                    <option value="complete">Édition Complète</option>
+                    <option value="classique">Édition Classique</option>
+                    <option value="imprimable">Édition Imprimable</option>
                 </select>
             </label>
 
-            <button class="btn-black">Procéder au paiement</button>
-            <button class="btn-paypal">Payer avec <strong>PayPal</strong></button>
+            <label>Moyen de paiement
+                <select id="paiementSelect" required>
+                    <option value="carte">Carte Bancaire</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="crypto">Crypto</option>
+                </select>
+            </label>
+            <button type="submit" id="btnPaiement" class="btn-black">Procéder au paiement</button>
+            <button type="button" id="btnPaypal" class="btn-paypal" style="display: none;">Payer avec
+                <strong>PayPal</strong></button>
         </form>
     </div>
 
     <div class="order-summary">
         <h3>🧾 Récapitulatif</h3>
         <ul>
-            <li><span>Sous-total</span><strong>35,00€</strong></li>
-            <li><span>Livraison</span><strong>Offerte</strong></li>
-            <li class="total"><span>Total</span><strong>35,00€</strong></li>
+            <li><span>Sous-total</span><strong id="sousTotal">35,00€</strong></li>
+            <li><span>Livraison</span><strong id="livraison">Offerte</strong></li>
+            <li class="total"><span>Total</span><strong id="total">35,00€</strong></li>
         </ul>
         <p class="note">📦 Livraison en 2-4 jours. Retrait possible.</p>
     </div>
@@ -117,7 +118,6 @@
 <footer>
     © 2025 - 2026 Eco-Challenge. Tous droits réservés.
 </footer>
-
 
 <script src="script.js" defer></script>
 
